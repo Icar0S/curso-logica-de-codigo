@@ -32,10 +32,10 @@ def main():
 
             # Processa o clique do mouse (jogada)
             if event.type == pygame.MOUSEBUTTONDOWN and not game_over:
-                mouseX = event.pos[0]
-                mouseY = event.pos[1]
-                clicked_row = mouseY // SQUARE_SIZE
-                clicked_col = mouseX // SQUARE_SIZE
+                mouse_x = event.pos[0]
+                mouse_y = event.pos[1]
+                clicked_row = mouse_y // SQUARE_SIZE
+                clicked_col = mouse_x // SQUARE_SIZE
 
                 if available_square(board, clicked_row, clicked_col):
                     mark_square(board, clicked_row, clicked_col, player)

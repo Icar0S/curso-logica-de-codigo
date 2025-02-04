@@ -62,10 +62,10 @@ def check_win(screen, board, player):
     return False
 
 
-def restart(board, screen, draw_lines, BG_COLOR):
+def restart(board, screen, draw_lines, bg_color):
     """Reinicia o jogo, limpando o tabuleiro e redesenhando as linhas."""
     for row in range(len(board)):
         for col in range(len(board[row])):
             board[row][col] = 0
-    screen.fill(BG_COLOR)
+    screen.fill(bg_color)
     draw_lines(screen)

@@ -59,16 +59,16 @@ def draw_figures(screen, board):
 
 def draw_vertical_winning_line(screen, col, player):
     """Desenha a linha vertical que indica a vitória."""
-    posX = col * SQUARE_SIZE + SQUARE_SIZE // 2
+    pos_x = col * SQUARE_SIZE + SQUARE_SIZE // 2
     color = RED if player == 1 else BLUE
-    pygame.draw.line(screen, color, (posX, 15), (posX, HEIGHT - 15), LINE_WIDTH)
+    pygame.draw.line(screen, color, (pos_x, 15), (pos_x, HEIGHT - 15), LINE_WIDTH)
 
 
 def draw_horizontal_winning_line(screen, row, player):
     """Desenha a linha horizontal que indica a vitória."""
-    posY = row * SQUARE_SIZE + SQUARE_SIZE // 2
+    pos_y = row * SQUARE_SIZE + SQUARE_SIZE // 2
     color = RED if player == 1 else BLUE
-    pygame.draw.line(screen, color, (15, posY), (WIDTH - 15, posY), LINE_WIDTH)
+    pygame.draw.line(screen, color, (15, pos_y), (WIDTH - 15, pos_y), LINE_WIDTH)
 
 
 def draw_asc_diagonal(screen, player):
