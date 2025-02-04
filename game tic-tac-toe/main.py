@@ -45,11 +45,10 @@ def main():
                     draw_figures(screen, board)
 
             # Reinicia o jogo ao pressionar a tecla "R"
-            if event.type == pygame.KEYDOWN:
-                if event.key == pygame.K_r:
-                    restart(board, screen, draw_lines, BG_COLOR)
-                    player = 1
-                    game_over = False
+            if event.type == pygame.KEYDOWN and event.key == pygame.K_r:
+                restart(board, screen, draw_lines, BG_COLOR)
+                player = 1
+                game_over = False
 
         pygame.display.update()
 
