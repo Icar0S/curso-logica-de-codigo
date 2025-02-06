@@ -131,16 +131,16 @@ def check_win(player):
 
 def draw_vertical_winning_line(col, player):
     """Desenha a linha vertical que indica a vitória."""
-    posX = col * SQUARE_SIZE + SQUARE_SIZE // 2
+    pos_x = col * SQUARE_SIZE + SQUARE_SIZE // 2
     color = RED if player == 1 else BLUE
-    pygame.draw.line(screen, color, (posX, 15), (posX, HEIGHT - 15), LINE_WIDTH)
+    pygame.draw.line(screen, color, (pos_x, 15), (pos_x, HEIGHT - 15), LINE_WIDTH)
 
 
 def draw_horizontal_winning_line(row, player):
     """Desenha a linha horizontal que indica a vitória."""
-    posY = row * SQUARE_SIZE + SQUARE_SIZE // 2
+    pos_y = row * SQUARE_SIZE + SQUARE_SIZE // 2
     color = RED if player == 1 else BLUE
-    pygame.draw.line(screen, color, (15, posY), (WIDTH - 15, posY), LINE_WIDTH)
+    pygame.draw.line(screen, color, (15, pos_y), (WIDTH - 15, pos_y), LINE_WIDTH)
 
 
 def draw_asc_diagonal(player):
@@ -177,11 +177,11 @@ def main():
 
             # Processa o clique do mouse (jogada)
             if event.type == pygame.MOUSEBUTTONDOWN and not game_over:
-                mouseX = event.pos[0]  # Coordenada X do clique
-                mouseY = event.pos[1]  # Coordenada Y do clique
+                mouse_x = event.pos[0]  # Coordenada X do clique
+                mouse_y = event.pos[1]  # Coordenada Y do clique
 
-                clicked_row = mouseY // SQUARE_SIZE
-                clicked_col = mouseX // SQUARE_SIZE
+                clicked_row = mouse_y // SQUARE_SIZE
+                clicked_col = mouse_x // SQUARE_SIZE
 
                 if available_square(clicked_row, clicked_col):
                     mark_square(clicked_row, clicked_col, player)
@@ -191,13 +191,13 @@ def main():
                     draw_figures()
 
             # Reinicia o jogo ao pressionar a tecla "R"
-            if event.type == pygame.KEYDOWN:
-                if event.key == pygame.K_r:
-                    restart()
-                    player = 1
-                    game_over = False
+            if event.type == pygame.KEYDOWN and event.key == pygame.K_r:
+                restart()
+                player = 1
+                game_over = False
 
         pygame.display.update()
+    return 0
 
 
 if __name__ == "__main__":
