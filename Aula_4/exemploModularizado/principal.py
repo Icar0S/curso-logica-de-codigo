@@ -1,11 +1,10 @@
-# principal.py
 from modMaths import somar, subtrair
 from modLists import encontrar_maximo, encontrar_minimo, calcular_media, ordenar_lista
 
 
 def main():
     # Usando funções do modulo_matematica
-    soma = somar(5, 5)
+    soma = somar(5, 32)
     subtracao = subtrair(5, 2)
     print("A soma é:", soma)
     print("A subtracao é:", subtracao)
