@@ -1,11 +1,13 @@
 import random
 import string
 
+
 # Função para gerar uma senha aleatória
 def gerar_senha(tamanho):
     caracteres = string.ascii_letters + string.digits + string.punctuation
-    senha = ''.join(random.choice(caracteres) for i in range(tamanho))
+    senha = "".join(random.choice(caracteres) for _ in range(tamanho))
     return senha
+
 
 # Função para verificar se a senha atende aos requisitos mínimos
 def verificar_senha(senha):
@@ -21,6 +23,7 @@ def verificar_senha(senha):
         return "Senha fraca: deve conter pelo menos um caractere especial."
     else:
         return "Senha forte!"
+
 
 # Gerando uma senha aleatória
 tamanho_senha = int(input("Digite o tamanho desejado para a senha (mínimo 8): "))
